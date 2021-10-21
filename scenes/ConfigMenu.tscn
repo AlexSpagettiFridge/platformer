@@ -1,0 +1,193 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://gfx/theme/gameTheme.tres" type="Theme" id=1]
+[ext_resource path="res://scr/ui/ConfigMenu.cs" type="Script" id=2]
+
+[node name="ConfigMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 112.0
+margin_top = 44.0
+margin_right = -112.0
+margin_bottom = -44.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -48.0
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Display" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 57.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="LeftColumn" type="VBoxContainer" parent="TabContainer/Display"]
+anchor_right = 0.5
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResolutionContainer" type="HSplitContainer" parent="TabContainer/Display/LeftColumn"]
+margin_right = 396.0
+margin_bottom = 39.0
+
+[node name="Label" type="Label" parent="TabContainer/Display/LeftColumn/ResolutionContainer"]
+margin_right = 126.0
+margin_bottom = 39.0
+text = "resolution:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResolutionButton" type="OptionButton" parent="TabContainer/Display/LeftColumn/ResolutionContainer"]
+margin_left = 138.0
+margin_right = 396.0
+margin_bottom = 39.0
+text = "Resolution"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScreenmodeButton" type="CheckBox" parent="TabContainer/Display/LeftColumn"]
+margin_top = 43.0
+margin_right = 396.0
+margin_bottom = 78.0
+text = "fullscreen"
+
+[node name="PixelsnapButton" type="CheckBox" parent="TabContainer/Display/LeftColumn"]
+margin_top = 82.0
+margin_right = 396.0
+margin_bottom = 117.0
+text = "pixelperfect"
+
+[node name="RightColumn" type="VBoxContainer" parent="TabContainer/Display"]
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 57.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound"]
+anchor_right = 0.5
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MasterContainer" type="HSplitContainer" parent="TabContainer/Sound/VBoxContainer"]
+margin_right = 396.0
+margin_bottom = 39.0
+split_offset = 30
+
+[node name="Label" type="Label" parent="TabContainer/Sound/VBoxContainer/MasterContainer"]
+margin_right = 121.0
+margin_bottom = 39.0
+text = "Master"
+
+[node name="MasterSlider" type="HSlider" parent="TabContainer/Sound/VBoxContainer/MasterContainer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 133.0
+margin_top = -8.0
+margin_bottom = 8.0
+min_value = -80.0
+max_value = 6.0
+value = -6.0
+
+[node name="MusicContainer" type="HSplitContainer" parent="TabContainer/Sound/VBoxContainer"]
+margin_top = 43.0
+margin_right = 396.0
+margin_bottom = 82.0
+split_offset = 47
+
+[node name="Label" type="Label" parent="TabContainer/Sound/VBoxContainer/MusicContainer"]
+margin_right = 120.0
+margin_bottom = 39.0
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="TabContainer/Sound/VBoxContainer/MusicContainer"]
+margin_left = 132.0
+margin_right = 396.0
+margin_bottom = 16.0
+min_value = -80.0
+max_value = 6.0
+value = -6.0
+
+[node name="SoundContainer" type="HSplitContainer" parent="TabContainer/Sound/VBoxContainer"]
+margin_top = 86.0
+margin_right = 396.0
+margin_bottom = 125.0
+split_offset = 47
+
+[node name="Label" type="Label" parent="TabContainer/Sound/VBoxContainer/SoundContainer"]
+margin_right = 119.0
+margin_bottom = 39.0
+text = "Sound"
+
+[node name="SoundSlider" type="HSlider" parent="TabContainer/Sound/VBoxContainer/SoundContainer"]
+margin_left = 131.0
+margin_right = 396.0
+margin_bottom = 16.0
+min_value = -80.0
+max_value = 6.0
+value = -6.0
+
+[node name="Panel" type="Panel" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="Panel/HBoxContainer"]
+margin_right = 45.0
+margin_bottom = 48.0
+text = "back"
+
+[node name="AcceptButton" type="Button" parent="Panel/HBoxContainer"]
+margin_left = 49.0
+margin_right = 97.0
+margin_bottom = 48.0
+disabled = true
+text = "apply"
+[connection signal="item_selected" from="TabContainer/Display/LeftColumn/ResolutionContainer/ResolutionButton" to="." method="OnResolutionButtonItemSelected"]
+[connection signal="toggled" from="TabContainer/Display/LeftColumn/ScreenmodeButton" to="." method="OnScreenmodeButtonToggled"]
+[connection signal="toggled" from="TabContainer/Display/LeftColumn/PixelsnapButton" to="." method="OnPixelsnapButtonToggled"]
+[connection signal="value_changed" from="TabContainer/Sound/VBoxContainer/MasterContainer/MasterSlider" to="." method="OnMasterSliderValueChanged"]
+[connection signal="value_changed" from="TabContainer/Sound/VBoxContainer/MusicContainer/MusicSlider" to="." method="OnMusicSliderValueChanged"]
+[connection signal="value_changed" from="TabContainer/Sound/VBoxContainer/SoundContainer/SoundSlider" to="." method="OnSoundSliderValueChanged"]
+[connection signal="pressed" from="Panel/HBoxContainer/BackButton" to="." method="OnBackButtonPressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/AcceptButton" to="." method="OnAcceptButtonPressed"]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://gfx/theme/gameTheme.tres" type="Theme" id=1]
+[ext_resource path="res://props/ui/SavegameSelect.tscn" type="PackedScene" id=2]
+
+[node name="SavegameScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator" type="VSplitContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 100.0
+margin_right = -100.0
+margin_bottom = -100.0
+dragger_visibility = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VSeparator"]
+margin_right = 824.0
+margin_bottom = 400.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SavegameSelect" parent="VSeparator/VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 824.0
+margin_bottom = 130.0
+slotId = 1
+
+[node name="SavegameSelect2" parent="VSeparator/VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 134.0
+margin_right = 824.0
+margin_bottom = 265.0
+slotId = 2
+
+[node name="SavegameSelect3" parent="VSeparator/VBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 269.0
+margin_right = 824.0
+margin_bottom = 400.0
+slotId = 3

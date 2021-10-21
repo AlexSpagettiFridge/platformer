@@ -1,0 +1,6 @@
+C:\Users\PC\Dropbox\Projekte\games\platformer\.mono\temp\bin\ExportDebug\Platformer.dll
+C:\Users\PC\Dropbox\Projekte\games\platformer\.mono\temp\bin\ExportDebug\Platformer.pdb
+C:\Users\PC\Dropbox\Projekte\games\platformer\.mono\temp\obj\ExportDebug\Platformer.csprojAssemblyReference.cache
+C:\Users\PC\Dropbox\Projekte\games\platformer\.mono\temp\obj\ExportDebug\Platformer.csproj.CoreCompileInputs.cache
+C:\Users\PC\Dropbox\Projekte\games\platformer\.mono\temp\obj\ExportDebug\Platformer.dll
+C:\Users\PC\Dropbox\Projekte\games\platformer\.mono\temp\obj\ExportDebug\Platformer.pdb

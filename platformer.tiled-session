@@ -1,0 +1,128 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "maps/inbtw1.tmx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Alle Dateien (*)",
+    "fileStates": {
+        "C:/Users/Alexander/Desktop/testMap.tmx": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 92,
+                "y": 325
+            }
+        },
+        "C:/Users/Alexander/source/repos/Platformer/Platformer/Content/Tiletest.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 590.6666666666666,
+                "y": 364
+            }
+        },
+        "maps/hattest.tmx": {
+            "scale": 2,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 128.25,
+                "y": 0
+            }
+        },
+        "maps/inbtw1.tmx": {
+            "scale": 2,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 780.25,
+                "y": -128.5
+            }
+        },
+        "maps/snailHell.tmx": {
+            "scale": 2,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 128.25,
+                "y": -128.25
+            }
+        },
+        "maps/test.tmx": {
+            "scale": 3,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 630,
+                "y": 90.66666666666666
+            }
+        },
+        "maps/tilemaps/bg-things.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "maps/tilemaps/enttilemap.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "maps/tilemaps/enviroment.tsx": {
+            "scaleInDock": 1
+        },
+        "maps/tilemaps/red-bricks.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 2,
+            "scaleInEditor": 4
+        },
+        "maps/tilemaps/snail-tiles.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 4
+        },
+        "maps/tutorial.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 1023.6666666666666,
+                "y": -256.3333333333333
+            }
+        }
+    },
+    "map.fixedSize": false,
+    "map.height": 25,
+    "map.lastUsedFormat": "tmx",
+    "map.orientation": 1,
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 40,
+    "openFiles": [
+        "maps/tilemaps/enttilemap.tsx",
+        "maps/tutorial.tmx",
+        "maps/tilemaps/bg-things.tsx",
+        "maps/snailHell.tmx",
+        "maps/tilemaps/red-bricks.tsx",
+        "maps/inbtw1.tmx"
+    ],
+    "project": "platformer.tiled-project",
+    "property.type": "string",
+    "recentFiles": [
+        "maps/tilemaps/enttilemap.tsx",
+        "maps/tutorial.tmx",
+        "maps/tilemaps/bg-things.tsx",
+        "maps/snailHell.tmx",
+        "maps/tilemaps/red-bricks.tsx",
+        "maps/inbtw1.tmx",
+        "maps/hattest.tmx",
+        "maps/tilemaps/snail-tiles.tsx"
+    ],
+    "tileset.embedInMap": false,
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.margin": 0,
+    "tileset.spacing": 0,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    },
+    "tileset.transparentColor": "#ff00ff",
+    "tileset.type": 0,
+    "tileset.useTransparentColor": false
+}

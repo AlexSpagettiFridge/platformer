@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/snailHell.tmx-d67ea3e4c450cbcb953cb48a4651fee5.scn"
+
+[deps]
+
+source_file="res://maps/snailHell.tmx"
+dest_files=[ "res://.import/snailHell.tmx-d67ea3e4c450cbcb953cb48a4651fee5.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=true
+uv_clip=true
+image_flags=3
+collision_layer=1
+embed_internal_images=false
+save_tiled_properties=false
+add_background=true
+post_import_script=""

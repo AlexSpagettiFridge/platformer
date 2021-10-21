@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://gfx/theme/gameTheme.tres" type="Theme" id=1]
+[ext_resource path="res://scr/ui/PauseMenu.cs" type="Script" id=2]
+
+[node name="PauseMenu" type="CanvasLayer"]
+pause_mode = 2
+layer = 6
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -100.0
+margin_right = 150.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_right = -16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer"]
+margin_right = 268.0
+margin_bottom = 39.0
+text = "Pause..."
+align = 1
+
+[node name="ButtonContinue" type="Button" parent="Control/Panel/VBoxContainer"]
+margin_top = 43.0
+margin_right = 268.0
+margin_bottom = 78.0
+text = "Weiter"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonConfig" type="Button" parent="Control/Panel/VBoxContainer"]
+margin_top = 82.0
+margin_right = 268.0
+margin_bottom = 117.0
+text = "Eintstellungen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonToMenu" type="Button" parent="Control/Panel/VBoxContainer"]
+margin_top = 121.0
+margin_right = 268.0
+margin_bottom = 156.0
+text = "Zurück zum Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonExit" type="Button" parent="Control/Panel/VBoxContainer"]
+margin_top = 160.0
+margin_right = 268.0
+margin_bottom = 195.0
+text = "Mach zu"
+__meta__ = {
+"_edit_use_anchors_": false
+}

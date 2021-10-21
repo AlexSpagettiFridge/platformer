@@ -1,0 +1,234 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://gfx/entities/hatStapler.png" type="Texture" id=1]
+[ext_resource path="res://scr/gameProps/HatStapler.cs" type="Script" id=2]
+[ext_resource path="res://gfx/theme/gameTheme.tres" type="Theme" id=3]
+[ext_resource path="res://gfx/entities/hatframes.tres" type="SpriteFrames" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 48, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 144, 0, 48, 32 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.25
+} ]
+
+[sub_resource type="Animation" id=7]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpriteContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "shiftLeft"
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpriteContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 24, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "shiftRight"
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpriteContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -24, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "shiftLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "shiftRight"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=17]
+states/idle/node = SubResource( 10 )
+states/idle/position = Vector2( 417, 69 )
+states/shiftLeft/node = SubResource( 11 )
+states/shiftLeft/position = Vector2( 281, 126 )
+states/shiftRight/node = SubResource( 12 )
+states/shiftRight/position = Vector2( 585, 126 )
+transitions = [ "idle", "shiftLeft", SubResource( 13 ), "idle", "shiftRight", SubResource( 14 ), "shiftLeft", "idle", SubResource( 15 ), "shiftRight", "idle", SubResource( 16 ) ]
+start_node = "idle"
+graph_offset = Vector2( -10, 13 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=18]
+
+[node name="HatStapler" type="Area2D"]
+z_index = 3
+script = ExtResource( 2 )
+
+[node name="ColShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+z_as_relative = false
+frames = SubResource( 6 )
+playing = true
+
+[node name="StaplerGui" type="CanvasLayer" parent="."]
+scale = Vector2( 0.35, 0.35 )
+transform = Transform2D( 0.35, 0, 0, 0.35, 0, 0 )
+follow_viewport_enable = true
+
+[node name="GuiControl" type="Control" parent="StaplerGui"]
+visible = false
+margin_left = -140.0
+margin_top = -100.0
+margin_right = 140.0
+margin_bottom = -42.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainPanel" type="Panel" parent="StaplerGui/GuiControl"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InsertInfo" type="Label" parent="StaplerGui/GuiControl/MainPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Hut einwerfen"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HatChooseMenu" type="Control" parent="StaplerGui/GuiControl/MainPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="StaplerGui/GuiControl/MainPanel/HatChooseMenu"]
+anchor_right = 1.0
+margin_left = 40.0
+margin_top = -45.0
+margin_right = -40.0
+margin_bottom = -10.0
+
+[node name="Label" type="Label" parent="StaplerGui/GuiControl/MainPanel/HatChooseMenu/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "choose hat"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ViewportContainer" type="ViewportContainer" parent="StaplerGui/GuiControl/MainPanel/HatChooseMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="StaplerGui/GuiControl/MainPanel/HatChooseMenu/ViewportContainer"]
+size = Vector2( 280, 58 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 0
+
+[node name="Camera2D" type="Camera2D" parent="StaplerGui/GuiControl/MainPanel/HatChooseMenu/ViewportContainer/Viewport"]
+current = true
+zoom = Vector2( 0.25, 0.25 )
+
+[node name="SpriteContainer" type="Node2D" parent="StaplerGui/GuiControl/MainPanel/HatChooseMenu/ViewportContainer/Viewport"]
+
+[node name="Sprite" type="AnimatedSprite" parent="StaplerGui/GuiControl/MainPanel/HatChooseMenu/ViewportContainer/Viewport/SpriteContainer"]
+position = Vector2( -48, 0 )
+frames = ExtResource( 4 )
+animation = "0idle"
+
+[node name="Sprite2" type="AnimatedSprite" parent="StaplerGui/GuiControl/MainPanel/HatChooseMenu/ViewportContainer/Viewport/SpriteContainer"]
+position = Vector2( -24, 0 )
+frames = ExtResource( 4 )
+animation = "0idle"
+
+[node name="Sprite3" type="AnimatedSprite" parent="StaplerGui/GuiControl/MainPanel/HatChooseMenu/ViewportContainer/Viewport/SpriteContainer"]
+frames = ExtResource( 4 )
+animation = "0idle"
+
+[node name="Sprite4" type="AnimatedSprite" parent="StaplerGui/GuiControl/MainPanel/HatChooseMenu/ViewportContainer/Viewport/SpriteContainer"]
+position = Vector2( 24, 0 )
+frames = ExtResource( 4 )
+animation = "0idle"
+
+[node name="Sprite5" type="AnimatedSprite" parent="StaplerGui/GuiControl/MainPanel/HatChooseMenu/ViewportContainer/Viewport/SpriteContainer"]
+position = Vector2( 48, 0 )
+frames = ExtResource( 4 )
+animation = "0idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StaplerGui/GuiControl/MainPanel/HatChooseMenu/ViewportContainer/Viewport"]
+anims/idle = SubResource( 7 )
+anims/shiftLeft = SubResource( 8 )
+anims/shiftRight = SubResource( 9 )
+
+[node name="AnimationTree" type="AnimationTree" parent="StaplerGui/GuiControl/MainPanel/HatChooseMenu/ViewportContainer/Viewport"]
+tree_root = SubResource( 17 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 18 )

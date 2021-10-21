@@ -1,0 +1,170 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://gfx/theme/gameTheme.tres" type="Theme" id=1]
+[ext_resource path="res://gfx/entities/static/scroll.png" type="Texture" id=2]
+[ext_resource path="res://gfx/entities/static/berry.png" type="Texture" id=3]
+[ext_resource path="res://scr/ui/SavegameSelect.cs" type="Script" id=4]
+
+[node name="SavegameSelect" type="Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -200.0
+margin_bottom = -450.0
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+split_offset = 650
+dragger_visibility = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftControl" type="Control" parent="HSplitContainer"]
+margin_right = 650.0
+margin_bottom = 142.0
+
+[node name="SlotName" type="Label" parent="HSplitContainer/LeftControl"]
+anchor_right = 1.0
+margin_right = 6.10352e-05
+margin_bottom = 40.0
+text = "Slot #"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/LeftControl"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 40.0
+margin_right = -4.0
+margin_bottom = -4.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftControl" type="Control" parent="HSplitContainer/LeftControl/HBoxContainer"]
+margin_right = 211.0
+margin_bottom = 98.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/LeftControl/HBoxContainer/LeftControl"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="berryBox" type="HSplitContainer" parent="HSplitContainer/LeftControl/HBoxContainer/LeftControl/VBoxContainer"]
+margin_right = 211.0
+margin_bottom = 39.0
+split_offset = 40
+dragger_visibility = 1
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/LeftControl/HBoxContainer/LeftControl/VBoxContainer/berryBox"]
+margin_right = 86.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+texture = ExtResource( 3 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BerryLabel" type="Label" parent="HSplitContainer/LeftControl/HBoxContainer/LeftControl/VBoxContainer/berryBox"]
+margin_left = 98.0
+margin_right = 211.0
+margin_bottom = 39.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "9999/9999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HSplitContainer" parent="HSplitContainer/LeftControl/HBoxContainer/LeftControl/VBoxContainer"]
+margin_top = 43.0
+margin_right = 211.0
+margin_bottom = 82.0
+split_offset = 40
+dragger_visibility = 1
+
+[node name="TextureRect2" type="TextureRect" parent="HSplitContainer/LeftControl/HBoxContainer/LeftControl/VBoxContainer/HBoxContainer2"]
+margin_right = 110.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollLabel2" type="Label" parent="HSplitContainer/LeftControl/HBoxContainer/LeftControl/VBoxContainer/HBoxContainer2"]
+margin_left = 122.0
+margin_right = 211.0
+margin_bottom = 39.0
+size_flags_horizontal = 4
+text = "999/999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiddleControl" type="Control" parent="HSplitContainer/LeftControl/HBoxContainer"]
+margin_left = 215.0
+margin_right = 426.0
+margin_bottom = 98.0
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HSplitContainer/LeftControl/HBoxContainer/MiddleControl"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+bbcode_enabled = true
+bbcode_text = "[center]@blabla[/center]
+[center]100%[/center]"
+text = "@blabla
+100%"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RigthControl" type="Control" parent="HSplitContainer/LeftControl/HBoxContainer"]
+margin_left = 430.0
+margin_right = 642.0
+margin_bottom = 98.0
+size_flags_horizontal = 3
+
+[node name="RigthControl" type="Control" parent="HSplitContainer"]
+margin_left = 662.0
+margin_right = 816.0
+margin_bottom = 142.0
+
+[node name="Button" type="Button" parent="HSplitContainer/RigthControl"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+text = "delete"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="." to="." method="OnLoadButtonPressed"]
+[connection signal="pressed" from="HSplitContainer/RigthControl/Button" to="." method="OnDeleteButtonPressed"]

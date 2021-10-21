@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://gfx/entities/borries.png" type="Texture" id=1]
+[ext_resource path="res://scr/gameProps/Berry.cs" type="Script" id=2]
+[ext_resource path="res://scr/misc/PlatformerEntity.cs" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.5
+} ]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 9.0
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 5, 5 )
+
+[node name="Borries" type="KinematicBody2D"]
+collision_layer = 8
+script = ExtResource( 3 )
+
+[node name="Berry" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Berry"]
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="ColShape" type="CollisionShape2D" parent="Berry"]
+shape = SubResource( 4 )
+
+[node name="ColShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 5 )

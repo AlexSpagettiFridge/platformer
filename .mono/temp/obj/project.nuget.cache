@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "6fm3AgVnFas3UXlmvuiVn5djL8yZvBqlq3QLyic0HY/yXjyR6F6uDdOGZaGZkslRBvVldqLICWNdHISj4DM21g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\PC\\Dropbox\\Projekte\\games\\platformer\\Platformer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.0\\microsoft.netframework.referenceassemblies.net472.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
